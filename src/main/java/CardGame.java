@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class CardGame {
     ArrayList<Card> deck = new ArrayList<>();
@@ -14,5 +16,21 @@ public class CardGame {
 
     public ArrayList<Card> getDeck(){
         return deck;
+    }
+
+    public Card dealCard(){
+        return deck.removeFirst();
+    }
+
+    public void sortDeckInNumberOrder(){
+        deck.sort((a,b) -> {return a.value < b.value?-1:1;});
+    }
+
+    public void sortDeckInSuitOrder(){
+        deck.sort(Comparator.comparing(card -> card.suit));
+    }
+
+    public void shuffleDeck(){
+        Collections.shuffle(deck);
     }
 }
