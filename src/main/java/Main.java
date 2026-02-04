@@ -2,15 +2,17 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(){
-        CardGame game = new CardGame();
+        Snap snap = new Snap();
 //        System.out.println(game.getDeck().getFirst().toString());
 //        System.out.println(game.dealCard().toString());
 //        System.out.println(game.getDeck().getFirst().toString());
-        game.shuffleDeck();
-        System.out.println(game.getDeck().toString());
-        game.sortDeckInNumberOrder();
-        System.out.println(game.getDeck().toString());
-        game.sortDeckInSuitOrder();
-        System.out.println(game.getDeck().toString());
+//        snap.shuffleDeck();
+//        System.out.println(snap.getDeck().toString());
+//        snap.sortDeckInNumberOrder();
+//        System.out.println(snap.getDeck().toString());
+//        snap.sortDeckInSuitOrder();
+//        System.out.println(snap.getDeck().toString());
+//        System.out.println(snap.getDeck().size());
+        snap.runGame();
     }
 }
