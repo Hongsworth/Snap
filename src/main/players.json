@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "example1",
+    "winCount": 1
+  },
+  {
+    "id": 2,
+    "name": "example2",
+    "winCount": 0
+  }
+]
