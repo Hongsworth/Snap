@@ -29,4 +29,19 @@ public class PlayerList {
             writer.write(jsonArr.toString(2));
         }
     }
+
+    public boolean checkName(String name){
+        for (int i = 0; i < this.jsonArr.length(); i++) {
+            JSONObject object = this.jsonArr.getJSONObject(i);
+//            System.out.println(object.get("name"));
+            if (object.get("name").equals(name)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public JSONArray getArray(){
+        return jsonArr;
+    }
 }

@@ -1,3 +1,4 @@
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -8,7 +9,6 @@ public class Main {
 //        Snap snap = new Snap();
 //        snap.runGame();
         PlayerList players = new PlayerList();
-        players.updateList(new JSONObject().put("id", 3).put("name", "player3").put("winCount", 0));
-        players.storeList();
+//        players.updateList(new JSONObject().put("id", 3).put("name", "player3").put("winCount", 0));
     }
 }
