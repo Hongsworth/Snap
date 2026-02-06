@@ -14,6 +14,10 @@ public class Snap extends CardGame{
     public void runGame(){
         this.shuffleDeck();
         this.run = true;
+//        System.out.println("Please enter player 1 id:");
+//        input = scanner.nextLine();
+//        System.out.println("Please enter player 2 id:");
+//        input = scanner.nextLine();
         while(this.run){
             if(this.getDeck().isEmpty()){
                 run = false;

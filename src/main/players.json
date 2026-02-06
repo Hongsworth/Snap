@@ -1,12 +1,17 @@
 [
   {
-    "id": 1,
+    "winCount": 1,
     "name": "example1",
-    "winCount": 1
+    "id": 1
   },
   {
-    "id": 2,
+    "winCount": 0,
     "name": "example2",
-    "winCount": 0
+    "id": 2
+  },
+  {
+    "winCount": 0,
+    "name": "player3",
+    "id": 3
   }
 ]
