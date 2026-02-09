@@ -19,26 +19,34 @@ public class PlayerList {
     public void readList() {
     }
 
-    public void updateList(JSONObject object){
-        jsonArr.put(object);
-    }
+//    public void updateList(JSONObject playerObject){
+//        for (int i = 0; i < this.jsonArr.length(); i++) {
+//            JSONObject object = this.jsonArr.getJSONObject(i);
+//            if (object.get("name").equals(playerObject.getString("name"))){
+//                System.out.printf("Loaded player %s\n", name);
+//            }
+//        }
+//        System.out.printf("No player found, created new player %s\n", name);
+//
+//        jsonArr.put(object);
+//    }
 
     public void storeList() throws IOException {
-        System.out.println(content);
         try(BufferedWriter writer = Files.newBufferedWriter(fileName)){
             writer.write(jsonArr.toString(2));
         }
     }
 
-    public boolean checkName(String name){
+    public Player getPlayerInfo(String name){
         for (int i = 0; i < this.jsonArr.length(); i++) {
             JSONObject object = this.jsonArr.getJSONObject(i);
-//            System.out.println(object.get("name"));
             if (object.get("name").equals(name)){
-                return true;
+                System.out.printf("Loaded player %s\n", name);
+                return new Player(object);
             }
         }
-        return false;
+        System.out.printf("No player found, created new player %s\n", name);
+        return new Player(new JSONObject().put("name", name).put("winCount", 0).put("lossCount", 0));
     }
 
     public JSONArray getArray(){
