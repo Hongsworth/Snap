@@ -23,31 +23,6 @@ public class Snap extends CardGame{
         turn = 0;
     }
 
-//    TimerTask task = new TimerTask()
-//    {
-//        public void run()
-//        {
-//            win = input.equals("snap");
-//        }
-//    };
-//
-//
-//    private Player checkWin(){
-//        Timer timer = new Timer();
-//        timer.schedule(task, 2000);
-//        input = scanner.nextLine();
-//        timer.cancel();
-//        if((turn % 2 == 1 && win) || (turn%2 == 0 && !win)){
-//            player1.addWin();
-//            player2.addLoss();
-//            return player1;
-//        }
-//        else {
-//            player2.addWin();
-//            player1.addLoss();
-//            return player2;
-//        }
-//    }
 private Player checkWin() {
     ExecutorService executor = Executors.newSingleThreadExecutor();
 
@@ -79,7 +54,7 @@ private Player checkWin() {
     }
 }
 
-    public void runGame(){
+    public void runGame() throws IOException {
         this.shuffleDeck();
         this.run = true;
         System.out.println("Please enter player 1 name: ");
@@ -112,6 +87,9 @@ private Player checkWin() {
 //                }
                 if (prevCard.value == currCard.value) {
                     System.out.printf("%s Wins\n", checkWin().name);
+                    players.updateList(player1.toJSON());
+                    players.updateList(player2.toJSON());
+                    players.storeList();
                     run = false;
                 }
             }

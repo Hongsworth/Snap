@@ -1,17 +1,17 @@
 [
   {
     "winCount": 1,
-    "name": "example1",
-    "lossCount": 1
+    "lossCount": 1,
+    "name": "example1"
   },
   {
     "winCount": 0,
-    "name": "example2",
-    "lossCount": 2
+    "lossCount": 2,
+    "name": "example2"
   },
   {
     "winCount": 0,
-    "name": "player3",
-    "lossCount": 3
+    "lossCount": 3,
+    "name": "player3"
   }
 ]
