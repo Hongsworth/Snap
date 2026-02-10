@@ -14,8 +14,6 @@ public class Main {
             System.out.println("Enter y to continue and anything else to exit");
             if(!Objects.equals(scanner.nextLine(), "y")){
                 cont = false;
-            }
-            else{
                 System.out.println("Game ending");
             }
         }

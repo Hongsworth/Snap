@@ -35,6 +35,7 @@ private Player checkWin() {
         win = input.equals("snap");
     } catch (TimeoutException e) {
         // No input within 2 seconds
+        System.out.println("\n2 seconds timed out");
         win = false;
         futureInput.cancel(true);
     } catch (Exception e) {
@@ -73,25 +74,18 @@ private Player checkWin() {
             if(this.getDeck().isEmpty()){
                 run = false;
                 System.out.println("No more cards left in the deck.");
-                System.out.println("You lose");
+                System.out.println("Draw");
                 break;
             }
             prevCard = currCard;
             currCard = dealCard();
             System.out.printf("Your next card is the %s of %s\n", currCard.symbol, currCard.suit);
-            if(prevCard != null) {
-//                if (prevCard.value == currCard.value) {
-//                    System.out.println("You win!");
-//                    run = false;
-//
-//                }
-                if (prevCard.value == currCard.value) {
+            if(prevCard != null && prevCard.value == currCard.value) {
                     System.out.printf("%s Wins\n", checkWin().name);
                     players.updateList(player1.toJSON());
                     players.updateList(player2.toJSON());
                     players.storeList();
                     run = false;
-                }
             }
             if(run){
                 input = scanner.nextLine();

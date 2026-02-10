@@ -6,17 +6,16 @@ import java.nio.file.Path;
 import org.json.*;
 
 public class PlayerList {
-    Path fileName;
-    String content;
-    JSONArray jsonArr;
-    BufferedWriter writer;
+    private final Path fileName;
+    private final JSONArray jsonArr;
     public PlayerList() throws IOException {
         this.fileName = Path.of("./src/main/players.json");
-        this.content = Files.readString(fileName);
-        this.jsonArr = new JSONArray(content);
-    }
-
-    public void readList() {
+        if(Files.readString(fileName).isEmpty()){
+            this.jsonArr = new JSONArray("[]");
+        }
+        else{
+            this.jsonArr = new JSONArray(Files.readString(fileName));
+        }
     }
 
     public void updateList(JSONObject playerObject){
