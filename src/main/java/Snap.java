@@ -81,11 +81,14 @@ private Player checkWin() {
             currCard = dealCard();
             System.out.printf("Your next card is the %s of %s\n", currCard.symbol, currCard.suit);
             if(prevCard != null && prevCard.value == currCard.value) {
-                    System.out.printf("%s Wins\n", checkWin().name);
+                    System.out.printf("\n%s Wins\n \n", checkWin().name);
                     players.updateList(player1.toJSON());
                     players.updateList(player2.toJSON());
                     players.storeList();
+                    player1.printRecord();
+                    player2.printRecord();
                     run = false;
+
             }
             if(run){
                 input = scanner.nextLine();

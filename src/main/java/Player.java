@@ -1,5 +1,7 @@
 import org.json.JSONObject;
 
+import java.sql.SQLOutput;
+
 public class Player {
     String name;
     int winCount;
@@ -25,5 +27,11 @@ public class Player {
 
     public void addLoss(){
         this.lossCount += 1;
+    }
+
+    public void printRecord(){
+        System.out.printf("%s's record\n", this.name);
+        System.out.printf("Number of wins: %d\n", this.winCount);
+        System.out.printf("Number of Losses: %d\n \n", this.lossCount);
     }
 }
